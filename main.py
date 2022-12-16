@@ -1,3 +1,5 @@
+from datetime import datetime, timedelta
+
 # A dictionary to keep track of the body and its distance from earth in miles
 # TODO: Add pluto
 planets = { "the sun"     : 91.4e6,
@@ -13,7 +15,7 @@ vehicles =     {"ford f 150" : 120,
                 "apollo 11"  : 25000,
                 "cruise ship": 27,
                 "walking"    : 3,
-                "bicycle"    : 16,}
+                "bicycle"    : 16}
    
 
 
@@ -56,8 +58,6 @@ while(1):
 
     t = planets[planet_selection] / vehicles[vehicle_selection]
 
-    from datetime import datetime
-    from datetime import timedelta
     d1 = datetime(2022,5,8,15,20,15)
     d2 = d1 + timedelta(days = t / 24.0)
     
