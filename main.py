@@ -8,20 +8,25 @@ planets = { "sun"     : 91.4e6,
             "saturn"  : 746e6,
             "uranus"  : 1.6e9,
             "neptune" : 2.7e9}
-vechles =     {"car" : 80,
-             "plane" : 600,
-          "spaceship": 1000}
+vehicles =     {"ford f 150" : 120,
+                "boeing 747" : 570,
+                "apollo 11"  : 25000,
+                "cruise ship": 27,
+                "walking"    : 3,
+                "bicycle"    : 16,}
 
 
 print("----------------------------------")
 print("Hello welcome to my final project!")
 print("----------------------------------")
 name = input("To begin enter your name: ")
-print()
-print("Hello", name, "please select a location to travel to!")
+print("Hello", name, )
 print()
 
+
 while(1):
+    print("please select a location to travel to!")
+    print()
     for planet in planets:
         print(planet.upper())
 
@@ -31,41 +36,58 @@ while(1):
         print("Selection Not valid, please enter a selection from the list")
         continue
 
+    print()
     print("You chose: " , planet_selection.upper(), " This body is ", planets[planet_selection], "Miles away from Earth\n\n")
 
     print("Choose your mode of transportation")
-    for v in vechles:
+    for v in vehicles:
         print(v.upper())
 
-    vechle_selection = input().lower()
+    vehicle_selection = input().lower()
 
-    if vechle_selection not in vechles:
+    if vehicle_selection not in vehicles:
         print("Selection Not valid, please enter a selection from the list")
         continue
 
-    print("You chose the" ,vechle_selection.upper(), "travling at", vechles[vechle_selection], "MPH")
+    print()
+    print("You chose the" ,vehicle_selection.upper(), "travling with a avg speed of", vehicles[vehicle_selection], "MPH")
     print()
 
-    t = planets[planet_selection] / vechles[vechle_selection]
+    t = planets[planet_selection] / vehicles[vehicle_selection]
 
     days = t / 24.0
 
     years = days / 365
 
-    if years > 1:
-        print("It took you", round(years, 3), "years to get to", planet_selection, "using the", vechle_selection)
+    decade = years / 10
+
+    century = decade /10
+
+    if century > 1: print("it took you", round(century, 2), "Centuries to get to", planet_selection, "by", vehicle_selection)
+
+    elif decade > 1: print("it took you", round(decade, 3), "decades to get to", planet_selection, "by", vehicle_selection)
+
+    elif years > 1:
+        print("It took you", round(years, 3), "years to get to", planet_selection, "by", vehicle_selection)
     else:
-        print("It took you", round(days, 3), "days to get to", planet_selection, "using the", vechle_selection, "...")
+        print("It took you", round(days, 4), "days to get to", planet_selection, "by", vehicle_selection, "...")
 
 
     while(1):
         print()
-        answer = input("Would you like to travle to anoter planet?: ").lower()
+        answer = input("Would you like to travle to anoter location?: ").lower()
+        print ()
         if answer == "yes":
+            
             break
         elif answer == "no":
             print()
-            print("thank you for travaling with us")
+            print("------------------------------------")
+            print(" Thank you for travaling with us!!")
+            print("------------------------------------")
+            print()
+            print()
+            print()
             exit(1)
         else: 
             print("Please type 'Yes' or 'No'")
