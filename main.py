@@ -1,6 +1,6 @@
 # A dictionary to keep track of the body and its distance from earth in miles
 # TODO: Add pluto
-planets = { "sun"     : 91.4e6,
+planets = { "the sun"     : 91.4e6,
             "mercury" : 48e6,
             "venus"   : 36e6,
             "earth"   : 0,
@@ -51,7 +51,7 @@ while(1):
         continue
 
     print()
-    print("You chose the" ,vehicle_selection.upper(), "travling with a avg speed of", vehicles[vehicle_selection], "MPH")
+    print("You chose to go by" ,vehicle_selection.upper(), "travling with a avg speed of", vehicles[vehicle_selection], "MPH")
     print()
 
     t = planets[planet_selection] / vehicles[vehicle_selection]
@@ -70,14 +70,15 @@ while(1):
     century = decade /10
 
 
-    if century > 1: print("it took you", round(century, 2), "Centuries to get to", planet_selection, "by", vehicle_selection, "your arrival date is", d2)
+    if century > 1: print("if you leave now it will take you", round(century, 2), "Centuries to get to", planet_selection, "your ETA is", d2)
 
-    elif decade > 1: print("it took you", round(decade, 3), "decades to get to", planet_selection, "by", vehicle_selection, "your arrival date is", d2  )
+    elif decade > 1: print("if you leave now it will take you", round(decade, 3), "decades to get to", planet_selection, "your ETA is", d2  )
 
     elif years > 1:
-        print("It took you", round(years, 3), "years to get to", planet_selection, "by", vehicle_selection, "your arrival date is", d2 )
+        print("if you leave now it will take you", round(years, 3), "years to get to", planet_selection, "your ETA is", d2 )
+
     else:
-        print("It took you", round(days, 4), "days to get to", planet_selection, "by", vehicle_selection, "your arrival date is", d2 )
+        print("if you leave now it will take you", round(days, 4), "days to get to", planet_selection, "your ETA is", d2 )
 
 
     while(1):
