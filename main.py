@@ -14,6 +14,7 @@ vehicles =     {"ford f 150" : 120,
                 "cruise ship": 27,
                 "walking"    : 3,
                 "bicycle"    : 16,}
+   
 
 
 print("----------------------------------")
@@ -55,6 +56,11 @@ while(1):
 
     t = planets[planet_selection] / vehicles[vehicle_selection]
 
+    from datetime import datetime
+    from datetime import timedelta
+    d1 = datetime(2022,5,8,15,20,15)
+    d2 = d1 + timedelta(hours = planets[planet_selection] / vehicles[vehicle_selection])
+    
     days = t / 24.0
 
     years = days / 365
@@ -63,14 +69,15 @@ while(1):
 
     century = decade /10
 
-    if century > 1: print("it took you", round(century, 2), "Centuries to get to", planet_selection, "by", vehicle_selection)
 
-    elif decade > 1: print("it took you", round(decade, 3), "decades to get to", planet_selection, "by", vehicle_selection)
+    if century > 1: print("it took you", round(century, 2), "Centuries to get to", planet_selection, "by", vehicle_selection, "your arrival date is", d2 )
+
+    elif decade > 1: print("it took you", round(decade, 3), "decades to get to", planet_selection, "by", vehicle_selection, "your arrival date is", d2  )
 
     elif years > 1:
-        print("It took you", round(years, 3), "years to get to", planet_selection, "by", vehicle_selection)
+        print("It took you", round(years, 3), "years to get to", planet_selection, "by", vehicle_selection, "your arrival date is", d2 )
     else:
-        print("It took you", round(days, 4), "days to get to", planet_selection, "by", vehicle_selection, "...")
+        print("It took you", round(days, 4), "days to get to", planet_selection, "by", vehicle_selection, "your arrival date is", d2 )
 
 
     while(1):
