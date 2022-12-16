@@ -56,14 +56,24 @@ while(1):
     print("You chose to go by" ,vehicle_selection.upper(), "travling with a avg speed of", vehicles[vehicle_selection], "MPH")
     print()
 
-    t = planets[planet_selection] / vehicles[vehicle_selection]
+    hours = planets[planet_selection] / vehicles[vehicle_selection]
 
-    d1 = datetime(2022,5,8,15,20,15)
-    d2 = d1 + timedelta(days = t / 24.0)
+    d1 = datetime.today()
+    d2 = d1 + timedelta(days = hours / 24.0)
     
-    days = t / 24.0
+    days = hours / 24.0
 
     years = days / 365
+
+    leftover_days = days % 365    
+
+    weeks = leftover_days / 7        
+
+    new_leftover_days = leftover_days % 7  
+
+    not_whole_days = days - int(days)   
+
+    days = int(days)    
 
     decade = years / 10
 
@@ -78,7 +88,7 @@ while(1):
         print("if you leave now it will take you", round(years, 3), "years to get to", planet_selection, "your ETA is", d2 )
 
     else:
-        print("if you leave now it will take you", round(days, 4), "days to get to", planet_selection, "your ETA is", d2 )
+        print("You will make it to", planet_selection, "in", int(years), "years", int(weeks), "weeks", days, "days and", int(hours), "your ETA is", d2 )
 
 
     while(1):
@@ -99,3 +109,4 @@ while(1):
             exit(1)
         else: 
             print("Please type 'Yes' or 'No'")
+
