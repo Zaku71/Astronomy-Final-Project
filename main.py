@@ -17,6 +17,7 @@ print("----------------------------------")
 print("Hello welcome to my final project!")
 print("----------------------------------")
 name = input("To begin enter your name: ")
+print()
 print("Hello", name, "please select a location to travel to!")
 print()
 
@@ -42,7 +43,8 @@ while(1):
         print("Selection Not valid, please enter a selection from the list")
         continue
 
-    print("You chose the" , vechle_selection.upper(), " travling at ", vechles[vechle_selection], "MPH")
+    print("You chose the" ,vechle_selection.upper(), "travling at", vechles[vechle_selection], "MPH")
+    print()
 
     t = planets[planet_selection] / vechles[vechle_selection]
 
@@ -53,16 +55,17 @@ while(1):
     if years > 1:
         print("It took you", round(years, 3), "years to get to", planet_selection, "using the", vechle_selection)
     else:
-        print("It took you", round(days, 3), "days to get to", planet_selection, "using the", vechle_selection)
+        print("It took you", round(days, 3), "days to get to", planet_selection, "using the", vechle_selection, "...")
 
 
     while(1):
+        print()
         answer = input("Would you like to travle to anoter planet?: ").lower()
         if answer == "yes":
             break
         elif answer == "no":
+            print()
             print("thank you for travaling with us")
             exit(1)
         else: 
             print("Please type 'Yes' or 'No'")
-
