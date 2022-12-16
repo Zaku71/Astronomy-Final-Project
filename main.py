@@ -59,7 +59,7 @@ while(1):
     from datetime import datetime
     from datetime import timedelta
     d1 = datetime(2022,5,8,15,20,15)
-    d2 = d1 + timedelta(hours = planets[planet_selection] / vehicles[vehicle_selection])
+    d2 = d1 + timedelta(days = t / 24.0)
     
     days = t / 24.0
 
@@ -70,7 +70,7 @@ while(1):
     century = decade /10
 
 
-    if century > 1: print("it took you", round(century, 2), "Centuries to get to", planet_selection, "by", vehicle_selection, "your arrival date is", d2 )
+    if century > 1: print("it took you", round(century, 2), "Centuries to get to", planet_selection, "by", vehicle_selection, "your arrival date is", d2)
 
     elif decade > 1: print("it took you", round(decade, 3), "decades to get to", planet_selection, "by", vehicle_selection, "your arrival date is", d2  )
 
