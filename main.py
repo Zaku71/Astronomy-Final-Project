@@ -11,23 +11,26 @@ planets = { "the sun" : 9.296e7,
             "neptune" : 2.794902e9,
             "mars"    : 1.41386e8}
 
-vehicles =     {"ford f 150" : 120,
+vehicles =     {"ford f 150" : 60,
                 "boeing 747" : 570,
                 "apollo 11"  : 25000,
                 "cruise ship": 27,
                 "walking"    : 3,
-                "bicycle"    : 16}
-   
+                "bicycle"    : 16,
+                "unicycle"   : 11,
+                "running"    : 6,
+                "submarine"  : 23,
+                "riding on a house fly" : 5}
+               
 
 def select_location():
     print("please select a location to travel to!")
     print()
     for planet in planets:
         print(planet.upper())
+    print()
 
-    planet_selection = input().lower()
-
-    num = planets[planet_selection]
+    planet_selection = input("Type your selection: ").lower()
 
     if planet_selection not in planets:
         print()
@@ -37,8 +40,10 @@ def select_location():
         print()
         planet_selection = select_location()
 
+    num = planets[planet_selection]
+
     print()
-    print("You chose:", planet_selection.upper(), "This body is", (f"{num:,}"), "Miles from Earth\n\n")
+    print("You chose:", planet_selection.upper(), "This bodhgy is", (f"{num:,}"), "Miles from Earth\n\n")
     return planet_selection
 
 
@@ -48,8 +53,10 @@ def select_vehicle():
     print("Choose your mode of transportation")
     for v in vehicles:
         print(v.upper())
+    print()
 
-    vehicle_selection = input().lower()
+    vehicle_selection = input("Type your selection: ").lower()
+
 
     if vehicle_selection not in vehicles:
         print()
@@ -59,8 +66,10 @@ def select_vehicle():
         print()
         vehicle_selection = select_vehicle()
 
+    mode_num = vehicles[vehicle_selection]
+        
     print()
-    print("You chose to go to", planet_selection.upper(), "by" ,vehicle_selection.upper(), "travling with a avg speed of", vehicles[vehicle_selection], "MPH")
+    print("You chose to go to", planet_selection.upper(), "by" ,vehicle_selection.upper(), "travling with a avg speed of", (f"{mode_num:,}"), "MPH")
     print()
     return vehicle_selection
 
@@ -105,6 +114,8 @@ while(1):
 
     hours = planets[planet_selection] / vehicles[vehicle_selection]
 
+    y = hours / 8760
+
     today = datetime.today()
 
     today_year = today.year
@@ -121,12 +132,10 @@ while(1):
 
     days = int(days % 7) 
 
-    century = years /10
+    century = years / 100
 
-    arriaval_year = int(today_year + years)
-
-
-
+    arriaval_year = int(today_year + y)
+    
 
     if century > 1: 
         print("You will make it to", planet_selection, "in", int(century), "centuries", int(years % 100), "years", int(weeks), "weeks", int(days), "days and", int(hours), "hours, year of arrival is: ", arriaval_year )
@@ -154,6 +163,7 @@ while(1):
             break
         else:
             print("Please type 'Yes' or 'No'")
+            print()
 
             
 
