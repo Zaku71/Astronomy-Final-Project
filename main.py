@@ -55,7 +55,7 @@ def select_vehicle():
         print("➡ Selection Not valid, please enter a selection from the list⬅")
         print("↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑")
         print()
-        vehicle_selectoin = select_vehicle()
+        vehicle_selection = select_vehicle()
 
     print()
     print("You chose to go to", planet_selection.upper(), "by" ,vehicle_selection.upper(), "travling with a avg speed of", vehicles[vehicle_selection], "MPH")
@@ -146,9 +146,14 @@ while(1):
             vehicle_selection = select_vehicle()
             do_we_restart = 1
             break
-        else:
+
+        elif answer == "no":
             do_we_restart = 0
             break
+        else:
+            print("Please type 'Yes' or 'No'")
+
+            
 
     if do_we_restart:
         continue
