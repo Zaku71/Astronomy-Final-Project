@@ -2,14 +2,14 @@ from datetime import datetime, timedelta
 
 # A dictionary to keep track of the body and its distance from earth in miles
 # TODO: Add pluto
-planets = { "the sun"     : 91.4e6,
-            "mercury" : 48e6,
-            "venus"   : 36e6,
-            "earth"   : 0,
-            "jupiter" : 365e6,
-            "saturn"  : 746e6,
-            "uranus"  : 1.6e9,
-            "neptune" : 2.7e9}
+planets = { "the sun" : 9.296e7,
+            "mercury" : 9.2026e7,
+            "venus"   : 2.03573e8,
+            "jupiter" : 4.83835e8,
+            "saturn"  : 8.87542e8,
+            "uranus"  : 1.78382e9,
+            "neptune" : 2.794902e9,
+            "mars"    : 1.41386e8}
 
 vehicles =     {"ford f 150" : 120,
                 "boeing 747" : 570,
@@ -27,6 +27,8 @@ def select_location():
 
     planet_selection = input().lower()
 
+    num = planets[planet_selection]
+
     if planet_selection not in planets:
         print()
         print("↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓")
@@ -36,7 +38,7 @@ def select_location():
         planet_selection = select_location()
 
     print()
-    print("You chose:", planet_selection.upper(), "This body is", planets[planet_selection], "Miles away from Earth\n\n")
+    print("You chose:", planet_selection.upper(), "This body is", (f"{num:,}"), "Miles from Earth\n\n")
     return planet_selection
 
 
